@@ -31,7 +31,9 @@ class Inference(nn.Module):
         device = torch.device(f'cuda:{opts.gpu_id}' if torch.cuda.is_available() else 'cpu')
         self.device = device  # 保存 device 变量供后续使用
         self.model_Decom_low = self.model_Decom_low.to(device)  # 将模型移动到 GPU
-        self.unfolding_model = self.unfolding_model.to(device)  # 将模型移动到 GPU
+        self.model_R = self.model_R.to(device)
+        self.model_L = self.model_L.to(device)
+        self.unfolding_opts = self.unfolding_opts.to(device)
         self.adjust_model = self.adjust_model.to(device)  # 将模型移动到 GPU
 
 
