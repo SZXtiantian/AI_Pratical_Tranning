@@ -21,6 +21,7 @@ class Inference(nn.Module):
         self.opts = opts
         # loading decomposition model 
         self.model_Decom_low = Decom()
+        device = torch.device(f'cuda:{opts.gpu_id}' if torch.cuda.is_available() else 'cpu')
         self.model_Decom_low = load_initialize(self.model_Decom_low, self.opts.Decom_model_low_path)
         # loading R; old_model_opts; and L model
         self.unfolding_opts, self.model_R, self.model_L = load_unfolding(self.opts.unfolding_model_path)
@@ -28,7 +29,7 @@ class Inference(nn.Module):
         self.adjust_model = load_adjustment(self.opts.adjust_model_path)
 
         # 选择使用 GPU 或 CPU
-        device = torch.device(f'cuda:{opts.gpu_id}' if torch.cuda.is_available() else 'cpu')
+
         self.device = device  # 保存 device 变量供后续使用
         self.model_Decom_low = self.model_Decom_low.to(device)  # 将模型移动到 GPU
         self.model_R = self.model_R.to(device)
