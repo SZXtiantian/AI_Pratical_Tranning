@@ -1,1 +1,1 @@
-# AI_Pratical_Tranning
+# AI_Pratical_Tranning for CPU
