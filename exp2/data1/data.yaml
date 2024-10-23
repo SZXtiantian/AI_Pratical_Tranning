@@ -1,0 +1,5 @@
+train: /content/drive/MyDrive/yolo/data1/train/images
+val: /content/drive/MyDrive/yolo/data1/valid/images
+
+nc: 1
+names: ['equation']
