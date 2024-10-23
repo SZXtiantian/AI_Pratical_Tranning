@@ -4,8 +4,6 @@
 # @Author  : 钟昊天2021280300
 # @FileName: runGradio.py
 # @Software: PyCharm
-import gradio as gr
-import test
 
 import gradio as gr
 import test
@@ -13,12 +11,12 @@ import test
 # 手动创建 opts 对象
 class Opts:
     def __init__(self):
-        self.img_path = "./demo/input/3.png"
+        self.img_path = "demo/input/3.png"
         self.output = "./demo/output"
         self.ratio = 5
-        self.Decom_model_low_path = "./ckpt/init_low.pth"
-        self.unfolding_model_path = "./ckpt/unfolding.pth"
-        self.adjust_model_path = "./ckpt/L_adjust.pth"
+        self.Decom_model_low_path = "ckpt/init_low.pth"
+        self.unfolding_model_path = "ckpt/unfolding.pth"
+        self.adjust_model_path = "ckpt/L_adjust.pth"
         self.gpu_id = 0
 
 opts = Opts()
